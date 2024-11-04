@@ -14,12 +14,12 @@ public class BookOrder {
         AVLTree orderTree = null;
         int value = 0;
        
-        //Prompting the user to enter the file path of the order file, taking input.
+        //prompting the user to enter the file path of the order file, taking input.
         String filePath = "orders.csv";
         //Reading the order data using the method below from the file and storing it in the AVL tree.
         orderTree = readOrdersFromFile(filePath);
 
-        //Loop to control user input, prompts the user after entry is processed
+        //loop to control user input, prompts the user after entry is processed
         while (done != true) {
         
             System.out.printf(
@@ -57,12 +57,13 @@ public class BookOrder {
                     orderId = s.nextInt();
                     if (orderId > 99 || orderId < 1) {
                         System.out.println("Please enter a valid number in the range of 1 to 99.");
-                        continue; // Restart the loop
+                        continue; // reestart the loop
                     }
             
                     // Check if Order ID already exists
                     if (orderTree != null && !orderTree.search(orderTree, orderId).equals("Order ID not found")) {
                         System.out.println("That OrderID is already in the system. Please pick another ID.");
+
                         continue; // Restart the loop
                     }
             
@@ -70,7 +71,7 @@ public class BookOrder {
                 }
             
                 // Loop for valid Book Name input
-                s.nextLine(); // Consume any remaining newline
+                s.nextLine(); // get rid of new line
                 while (true) {
                     System.out.println("Please enter the book name:");
                     bookName = s.nextLine();
@@ -98,9 +99,13 @@ public class BookOrder {
             //Second function, manually remove a book order, prompt the user for id and book name, calls delete method if user enters valid information.
             if (value == 2) {
                 if (orderTree == null) {
-                    System.out.println("Tree is empty.");
+                    System.out.println("Tree is empty. Please try adding a node first");
                 } else {
-                    int removeID = -1; // Initialize with an invalid value
+
+                    
+
+
+                    int removeID; // Initialize with an invalid value
                     
                     // Loop for valid Order ID input
                     while (true) {
@@ -121,19 +126,32 @@ public class BookOrder {
                             System.out.println("Please enter a valid number in the range of 1 to 99.");
                             continue; // Restart the loop
                         }
+
+                        if (orderTree.search(orderTree, removeID).equals("Order ID not found")) {
+                            System.out.println("Order ID " + removeID + " not found in the tree.");
+                             continue;
+                        }
             
                         break; // Exit the loop if input is valid
                     }
+                    
             
-                    // Attempt to delete the specified order ID
-                    if (orderTree.deleteOrder(removeID)) {
-                        System.out.println("Order ID " + removeID + " was removed successfully.");
-                        nodeNumber--;
-                    } else {
-                        System.out.println("Order ID " + removeID + " was not found in the tree.");
-                    }
+                          // Update `orderTree` with the result of `delete`
+        orderTree = orderTree.delete(orderTree, removeID);
+        
+        // Check if the tree is now empty
+                 if (orderTree == null) {
+            System.out.println("Tree is now empty after removing the last node.");
+            nodeNumber = 0; // Reset the node count
+            
+                 } else {
+            System.out.println("Order ID " + removeID + " was removed successfully.");
+                    nodeNumber--;
+                 }
+      }
+                    
                 }
-            }
+            
             
             //Third function, output an inorder tree with current book information, enters inOrder Method.
             if (value == 3) {
@@ -209,12 +227,14 @@ public class BookOrder {
             if (orderTree == null) {
                 System.out.println("The height of the tree is: 0");
             } else {
-                System.out.println("The height of the tree is: " + (orderTree.height + 1));
+                
+                System.out.println("The height of the tree is: " + (orderTree.height ));
             }
 
         }
         s.close();
     }
+
 
     //Method to read filpath from entered 
     public static AVLTree readOrdersFromFile(String filePath) {
@@ -247,7 +267,7 @@ public class BookOrder {
             
             //Confirmation of completion, returns (hopefully correct) height and number of nodes
             System.out.println("The book orders were all added.");
-            System.out.println("The height of the tree is: " + (orderTree.height + 1) );
+            System.out.println("The height of the tree is: " + (orderTree.height) );
             System.out.println("The number of nodes is " + nodeNumber);
             
         }
