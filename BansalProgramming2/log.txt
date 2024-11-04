@@ -1,0 +1,62 @@
+ROLES: 
+Ahmad >> Documentation
+Ethan >> Manager
+Maggie >> Tester
+William >> Lead Programmer
+_______________________________________________________________________
+[Fitz] (10/21) – Set up Communications through Snapchat and Discord 
+[All Members] (10/21) - Decided on Roles
+[Fitz] (10/22) – Submitted Roles, discussed meetings, and upcoming meeting to discuss meetings, contributions, and when people are starting
+[Fitz] (10/23) – Set up overview.pdf document and set up contributions log google doc. Set up a proposed meeting for Friday.
+[All members] (10/23) - Attended Meeting 
+
+    - Meeting Description: (DMs/Chat Meeting) Talked about meetings going forward in a more solid manner, how to code with VS
+
+[Fitz] (10/24) - Set up meeting date, started working on way to collab with code through VS
+[Fitz] (10/25) – Set up meeting for collaboration and other conversations about project. Starting project.
+[All members] (10/25) - Attended Meeting (4PM)
+
+    - Meeting Description: (Audio Call Meeting) Chatted about general things going on, looked over instructions very thoroughly, fully set up VSCode Live Share, set up meetings for the next few days, opened log.txt file,
+    opened questions.txt
+
+[All members] (10/26) - Looked into other tools we could use, Awaiting Lead Programmer's formatting of methods and framework
+[All members] (10/27) - Awaiting Lead Programmer's formatting of methods and framework
+[All members] (10/27) - Attended Meeting (8PM)
+
+    - Meeting Description: (Audio Call Meeting) Discussed formatting, looked at how things were set up and looked into how we exactly needed to set everything up
+
+[William] (10/27) - Framework Setup 1.5 Hours
+[William] (10/28) - Method writing 1.5 hours
+[All members] (10/29) - Attended Meeting (7PM)
+
+    - Meeting Description: (Audio Call Meeting) Worked on coding further. We worked on cleaning up the methods and other functions in BookOrder.java. 
+    (\/ More specific logs from this meeting below \/)
+
+[William] (10/29) - Worked on height functionallity 
+[Maggie] (10/29) - Created tests.pdf and added possible test cases. Discussed test cases and code with members.
+[Ahmad] (10/29) - Documentation for all methods. Completed the readme.pdf file for submission. Added the latest order method as well as reviewing methods with lead programmer.
+[Fitz] (10/29) - Cleaned up log.txt document so that it is easier to read and has more specific contributions between the whole group/individual, helped with test cases, set up IN-PERSON Meeting for Wednesday
+[All members] (10/30) - Attended Meeting (5PM)
+
+    - Meeting Description: (In-Person) Delved deep into test cases/exceptions/limitations, worked on further functions for AVL Tree
+    (\/ More specific logs from this meeting below\/)
+
+[William] (10/30) - Fixed Test Case Scenarios
+[Maggie] (10/30) - Worked on tests.pdf and summarize testes cases. Discussed more ways of documenting test cases. Helped with code.
+[Ahmad] (10/30) - Worked with lead programmer to solve issues in test cases, rearranged and completed readme.pdf
+[Fitz] (10/30) - Helped with tests.pdf document, assisted with test cases/exceptions/limitations, added some test cases in the first function and second function
+
+[NAME OF CONTRIBUTOR] (10/30)
+[NAME OF CONTRIBUTOR] (10/31)
+[NAME OF CONTRIBUTOR] (11/1)
+[NAME OF CONTRIBUTOR] (11/2)
+[NAME OF CONTRIBUTOR] (11/3)
+_______________________________________________________________________
+
+[[*ALL MEMBERS PARTICIPATED IN A VERY THOROUGH AND FAIR MANNER*]]
+
+GROUP COMMENTS: 
+[William] - TOO BE COMPLETED ONCE PROJECT IS DONE
+[Ahmad] - TOO BE COMPLETED ONCE PROJECT IS DONE
+[Fitz] - TOO BE COMPLETED ONCE PROJECT IS DONE
+[Maggie] - TOO BE COMPLETED ONCE PROJECT IS DONE

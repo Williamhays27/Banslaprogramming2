@@ -1,0 +1,19 @@
+QUESTIONS: 
+(1.) Where are you looking for efficiency? Will it be accounted for our grade? As efficient as possible, don't stress.
+
+(2.) Did you want anything specific in terms of organization? Not really anything specific.
+
+(3.) How would you like the log/contribution/mananger document to be formatted? All good the way they are right now.
+
+TO-DO's/NOTES: 
+Need to create case for if user inputs a non number 
+Need to deal with if user enters the same number
+Need to add printing the height
+
+-- Maggie next goal for tests: Main loop validation (checking 1 and 7's values), 
+second function when removing validate the order id input to make usre that it is an interger within the correct range, 
+finding book under specific order number (validate order id input to ensure it is an interger and withing the specified range) --
+2 out of 4 validations that William listed out
+
+QUESTIONS FOR GROUP:
+(1.) Where is it tested for blank inputs? Is it "if (bookName.equals("")) {"?
