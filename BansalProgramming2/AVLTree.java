@@ -37,8 +37,8 @@ public class AVLTree {
     }
 
     //Call leftRotate/Right Rotate based on Balacing Factor in order to maintain a balanced tree structure.
-    public AVLTree BalanceTree(AVLTree t) {
-        updateHeight(t);
+    public AVLTree balanceTree(AVLTree t) {
+        
         int bf = calcBF(t);
         if (bf < -1) {
             if (calcBF(t.right) > 0) {
@@ -51,19 +51,16 @@ public class AVLTree {
             }
             return rightRotate(t);
         }
+        updateHeight(t);
         return t;
     }
 
     //Maintains the a correct height variable called after insert and delete methods.
     public int updateHeight(AVLTree t) {
-        if (t == null) {
-            return -1;
-        }
-        //If tree is not null, we add 1 to the max height of the subtree with a larger height, and return it.
-        else {
-            t.height = 1 + Math.max(updateHeight(t.left), updateHeight(t.right));
-            return t.height;
-        }
+        if (t == null){
+            return 0;
+        } 
+        return 1 + Math.max(updateHeight(t.left), updateHeight(t.right));
     }
     
     //Calculates the balance factor (height difference between left and right subtrees) for each node. (Used in BalanceTree method).
@@ -97,7 +94,7 @@ public class AVLTree {
         
       
         //Balances tree after insertion of new node
-        t = BalanceTree(t);
+        t = balanceTree(t);
         //Updates height after insertion of new node
         t.updateHeight(t);
         return t;
@@ -108,56 +105,56 @@ public class AVLTree {
     
     //Method to "fulfill order"/delete a node based on user-provided orderId
     public AVLTree delete(AVLTree t, int orderId) {
-        // Return the tree if it's null (orderId not found)
-        if (t == null) {
+        
+            // Return the tree if it's null (orderId not found)
+            if (t == null) {
+                System.out.println("The tree is null .");
+                return t;
+            }
+        
+            // Traverse left if provided id is less than the node
+            if (orderId < t.orderId) {
+                t.left = delete(t.left, orderId);
+            }
+            // Traverse right if provided id is greater than the node
+            else if (orderId > t.orderId) {
+                t.right = delete(t.right, orderId);
+            }
+            // Node found for deletion
+            else {
+                deleted = true; // Set deletion flag to true
+        
+                // Case with one child or no children
+                if (t.left == null && t.right == null) {
+                    return null;
+                } else if (t.left == null) {
+                    t = t.right;
+                } else if (t.right == null) {
+                    t = t.left;
+                } else {
+                    // Retrieves minimum value of the right subtree
+                    AVLTree successor = oldestOrder(t.right);
+                    t.orderId = successor.orderId;
+                    t.bookName = successor.bookName;
+                    // Recursively call delete on the successor
+                    t.right = delete(t.right, successor.orderId);
+                }
+            }
+        
+            // If the node removed was the only node
+            if (t == null) {
+                return null;
+            }
+        
+            // Balance and update height once after the recursive deletions and rotations
+            t = balanceTree(t);
+        
             return t;
         }
-
-        // Traverse left if provided id is less than the node
-        if (orderId < t.orderId) {
-            t.left = delete(t.left, orderId);
-        }
-        // Traverse right if provided id is greater than the node
-        else if (orderId > t.orderId) {
-            t.right = delete(t.right, orderId);
-        }
-        // Node found for deletion
-        else {
-            deleted = true; // Set deletion flag to true
-
-            // Case with one child or no children
-            if (t.left == null && t.right == null) {
-                t = null;
-            } else if (t.left == null) {
-                t = t.right;
-            } else if (t.right == null) {
-                t = t.left;
-            } else {
-                // Retrieves minimum value of the right subtree
-                AVLTree successor = oldestOrder(t.right);
-                t.orderId = successor.orderId;
-                t.bookName = successor.bookName;
-                // Recursively call delete on the successor
-                t.right = delete(t.right, successor.orderId);
-            }
-        }
-
-        // If the node removed was the only node
-        if (t == null) {
-            return null;
-        }
-
-        // Balance and update height
-        t = BalanceTree(t);
-        updateHeight(t);
-        return t;
-          }
+        
     
-    public boolean deleteOrder(int orderId) {
-        deleted = false; // Reset the deletion flag
-        delete(this, orderId);
-        return deleted; // Returns true if deletion occurred, false if not found
-    }
+        
+        
     
     
 
